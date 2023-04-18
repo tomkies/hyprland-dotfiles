@@ -1,0 +1,22 @@
+#!/usr/bin/bash
+
+## variables ##
+config=$HOME/.config/hypr
+scripts=$config/scripts
+
+## Screen Sharing ##
+$scripts/screensharing &
+
+## Workspace ##
+$scripts/workspace &
+
+## Nvidia ##
+env = LIBVA_DRIVER_NAME,nvidia
+env = XDG_SESSION_TYPE,wayland
+env = GBM_BACKEND,nvidia-drm
+env = __GLX_VENDOR_LIBRARY_NAME,nvidia
+env = WLR_NO_HARDWARE_CURSORS,1
+
+## screen locking when idle ##
+##$scripts/idle_handler &##
+
